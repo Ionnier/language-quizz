@@ -1,0 +1,20 @@
+mixin exercise(exercitiu)
+  - var category=exercitiu.id_category
+  - var content=exercitiu.content
+  div(id=exercitiu.id_exercise)
+    case category
+      when 1
+        - var content = exercitiu.content
+        - var to_write=content.split(/(\\n)*(\$BLANK)(?:\([0-9]+\))*/g)
+        - var ughlength=to_write.length
+        - var counter=0
+        each asd in to_write
+          - var newline = asd=='\n'
+          - var complete = asd=='$BLANK'
+          if newline
+            br
+          else if complete
+            input(type='text' name=exercitiu.id_exercise)
+          else
+            p=asd
+        br

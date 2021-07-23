@@ -4,18 +4,26 @@ services:
         image: mysql:8.0
         restart: always
         ports:
-            - 3306
+            - 3306:3306
         environment:
             MYSQL_ROOT_PASSWORD: example
+            LANG: C.UTF-8
         volumes:
             - mydatabasedata:/var/lib/mysql
             - ./init:/docker-entrypoint-initdb.d
+        healthcheck:
+            test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost"]
+            timeout: 20s
+            retries: 10
     web_app:
         build: .
         restart: always
         ports:
-            - 3002:3000
+            - 5000:3000
         environment:
             PORT: 3000
+        depends_on:
+            db:
+                condition: service_healthy    
 volumes:
     mydatabasedata:

@@ -1,0 +1,20 @@
+doctype html
+head
+  meta(charset='utf-8')
+  title Language Quizz
+  style
+    include ./css/styles.css
+include header
+main
+  h1=title
+  p=descrption
+  h2 Exercises:
+  mixin problem(link,sentence)
+    li 
+      a(href=link)
+        =sentence
+  ul
+    each proble in problems
+      +problem(`/problem/${proble.id_problem}`,proble.problem_text)
+include footer
+

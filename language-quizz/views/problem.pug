@@ -1,0 +1,17 @@
+doctype html
+head
+  meta(charset='utf-8')
+  title Language Quizz
+  style
+    include ./css/styles.css
+include header
+main
+  h1=title
+  h2=description
+  include exercise
+  each exer in exercises
+    +exercise(exer)   
+  button(onclick="helloWorld()") Send responses
+  script
+    include ./js/scripts.js
+include footer

@@ -1,0 +1,5 @@
+mixin problem_template(problem)
+  h3=problem.problem_text
+  include exercise
+  each exer in problem.exerciseList
+    +exercise(exer)

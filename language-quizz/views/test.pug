@@ -1,0 +1,16 @@
+doctype html
+head
+  meta(charset='utf-8')
+  title Language Quizz
+  style
+    include ./css/styles.css
+include header
+main
+  h1=title
+  include problem_template
+  each problem in problems
+    +problem_template(problem)
+  button(onclick="helloWorld()") Send responses
+  script
+    include ./js/scripts.js
+include footer

@@ -1,0 +1,54 @@
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+  }
+.lessons h2{
+    color: red;
+}
+.lesson,.card,.test{
+  margin: 10px 10px 10px 10px;
+}
+  @media (max-width: 800px) {
+    .flex-container {
+      flex-direction: column;
+    }
+  } 
+
+
+a:link {
+    color: red;
+  }
+  a:visited {
+    color: green;
+  }
+  a:hover {
+    color: hotpink;
+  }
+  a:active {
+    color: blue;
+  } 
+p,input{
+  display:inline;
+}
+header ul{
+  overflow: hidden;
+  text-align: end;
+}
+header li{
+  display: inline;
+  margin: 10px;
+}
+footer{
+  color: black;
+}
+footer ul{
+  overflow: hidden;
+  text-align: center;
+}
+footer li{
+  display: inline;
+  margin: 10px;
+}

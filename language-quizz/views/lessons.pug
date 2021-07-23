@@ -1,0 +1,17 @@
+doctype html
+head
+  meta(charset='utf-8')
+  title Language Quizz
+  style
+    include ./css/styles.css
+include header
+main
+  h1 Lessons
+  .lessons.flex-container
+    mixin lesson(link,name)
+      a(href=link)
+        .lesson
+          h2=name
+    each lesson in lessons
+      +lesson(`/lesson/${lesson.id_lesson}`,lesson.lesson_name)
+include footer    

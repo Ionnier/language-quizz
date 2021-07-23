@@ -51,6 +51,5 @@ router.get('/', async (req, res) => {
                                             where restricted=false')
     }
     res.json(tests)
-
 })
 module.exports = router
